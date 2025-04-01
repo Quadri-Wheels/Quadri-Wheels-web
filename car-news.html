@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car News - Quadri Wheels</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .coming-soon-container {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .coming-soon-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .version-badge {
+            background: var(--primary-red);
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .coming-soon-title {
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .coming-soon-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-red);
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-color);
+        }
+
+        .feature-description {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .countdown-item {
+            text-align: center;
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Dark Mode Styles */
+        body.dark-mode .feature-card {
+            background: var(--card-bg-dark);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .coming-soon-title {
+                font-size: 2.5rem;
+            }
+
+            .coming-soon-description {
+                font-size: 1rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .countdown {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .countdown-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">Quadri Wheels</a>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="videos.html" data-en="Videos" data-ar="الفيديوهات">Videos</a>
+                <a href="car-news.html" class="active" data-en="Car News" data-ar="أخبار السيارات">Car News</a>
+                <a href="about.html" data-en="About" data-ar="حول">About</a>
+                <a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="languageToggle" class="language-toggle">
+                    <span class="en">EN</span>
+                    <span class="ar">عربي</span>
+                </button>
+                <button id="themeToggle" class="theme-toggle">
+                    <span class="light">☀️</span>
+                    <span class="dark">🌙</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="coming-soon-container">
+            <div class="coming-soon-content">
+                <div class="version-badge">Version 2.0</div>
+                <h1 class="coming-soon-title" data-en="Car News Coming Soon" data-ar="أخبار السيارات قريباً">Car News Coming Soon</h1>
+                <p class="coming-soon-description" data-en="We're working on something amazing! Our new car news section will bring you the latest automotive updates, reviews, and insights." data-ar="نحن نعمل على شيء مذهل! سيجلب قسم أخبار السيارات الجديد أحدث التحديثات والمراجعات والرؤى في عالم السيارات">We're working on something amazing! Our new car news section will bring you the latest automotive updates, reviews, and insights.</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">📰</div>
+                        <h3 class="feature-title" data-en="Latest News" data-ar="أحدث الأخبار">Latest News</h3>
+                        <p class="feature-description" data-en="Stay updated with the most recent automotive news and developments" data-ar="ابق على اطلاع بأحدث أخبار وتطورات السيارات">Stay updated with the most recent automotive news and developments</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🚗</div>
+                        <h3 class="feature-title" data-en="Car Reviews" data-ar="مراجعات السيارات">Car Reviews</h3>
+                        <p class="feature-description" data-en="In-depth reviews of the latest car models and features" data-ar="مراجعات متعمقة لأحدث موديلات ومميزات السيارات">In-depth reviews of the latest car models and features</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3 class="feature-title" data-en="Market Analysis" data-ar="تحليل السوق">Market Analysis</h3>
+                        <p class="feature-description" data-en="Expert insights into automotive market trends and predictions" data-ar="رؤى خبيرة حول اتجاهات وتوقعات سوق السيارات">Expert insights into automotive market trends and predictions</p>
+                    </div>
+                </div>
+
+                <div class="countdown">
+                    <div class="countdown-item">
+                        <div class="countdown-number">30</div>
+                        <div class="countdown-label" data-en="Days" data-ar="يوم">Days</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number">12</div>
+                        <div class="countdown-label" data-en="Hours" data-ar="ساعة">Hours</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number">45</div>
+                        <div class="countdown-label" data-en="Minutes" data-ar="دقيقة">Minutes</div>
+                    </div>
+                    <div class="countdown-item">
+                        <div class="countdown-number">60</div>
+                        <div class="countdown-label" data-en="Seconds" data-ar="ثانية">Seconds</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3 data-en="About Quadri Wheels" data-ar="عن Quadri Wheels">About Quadri Wheels</h3>
+                <p data-en="Your ultimate destination for car reviews, news, and entertainment." data-ar="وجهتك النهائية لمراجعات السيارات والأخبار والترفيه">Your ultimate destination for car reviews, news, and entertainment.</p>
+            </div>
+            <div class="footer-section">
+                <h3 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h3>
+                <ul>
+                    <li><a href="index.html" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                    <li><a href="videos.html" data-en="Videos" data-ar="الفيديوهات">Videos</a></li>
+                    <li><a href="car-news.html" data-en="Car News" data-ar="أخبار السيارات">Car News</a></li>
+                    <li><a href="about.html" data-en="About" data-ar="حول">About</a></li>
+                    <li><a href="contact.html" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3 data-en="Connect With Us" data-ar="تواصل معنا">Connect With Us</h3>
+                <div class="social-links">
+                    <a href="https://www.youtube.com/@quadriwheels" target="_blank" class="social-link">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href="https://www.instagram.com/quadriwheels" target="_blank" class="social-link">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.facebook.com/quadriwheels" target="_blank" class="social-link">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Quadri Wheels. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة">All rights reserved.</span></p>
+        </div>
+    </footer>
+
+    <script src="https://kit.fontawesome.com/your-font-awesome-kit.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date();
+            targetDate.setDate(targetDate.getDate() + 30); // Set to 30 days from now
+
+            function update() {
+                const now = new Date();
+                const difference = targetDate - now;
+
+                const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                document.querySelector('.countdown-number:nth-child(1)').textContent = days;
+                document.querySelector('.countdown-number:nth-child(2)').textContent = hours;
+                document.querySelector('.countdown-number:nth-child(3)').textContent = minutes;
+                document.querySelector('.countdown-number:nth-child(4)').textContent = seconds;
+            }
+
+            update();
+            setInterval(update, 1000);
+        }
+
+        // Start countdown when page loads
+        updateCountdown();
+    </script>
+</body>
+</html> 

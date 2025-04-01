@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quadri Wheels - Your Robotics Channel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Quadri Wheels</div>
+            <ul class="nav-links">
+                <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
+                <li><a href="#latest" data-en="Latest Video" data-ar="أحدث فيديو">Latest Video</a></li>
+                <li><a href="car-news.html" data-en="Car News" data-ar="أخبار السيارات">Car News</a></li>
+                <li><a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
+                <li><a href="#social" data-en="Social Media" data-ar="وسائل التواصل">Social Media</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <button id="darkModeToggle" class="dark-mode-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="langToggle" class="lang-toggle">
+                    <span class="lang-text" data-en="عربي" data-ar="English">عربي</span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 data-en="Welcome to Quadri Wheels" data-ar="مرحباً بكم في كوادري ويلز">Welcome to Quadri Wheels</h1>
+                <p data-en="This is the official website of the channel, which is better and better than the old channel website (All rights reserved to Quadri Wales)" data-ar="دا موقع القناة الرسمي أحسن و أفضل من الموقع القديم للقناة (كل الحقوق تابعة لكوادري ويلز)">This is the official website of the channel, which is better and better than the old channel website (All rights reserved to Quadri Wales)</p>
+                <a href="https://www.youtube.com/@Quadri_Wheels" class="cta-button" data-en="Subscribe Now" data-ar="اشترك الآن">Subscribe Now</a>
+            </div>
+        </section>
+
+        <section id="latest" class="latest-video">
+            <h2 data-en="Latest Video" data-ar="أحدث فيديو">Latest Video</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/f9uxVM_SDbM" 
+                    title="Latest Quadri Wheels Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section id="popular" class="popular-videos">
+            <h2 data-en="Popular Videos" data-ar="الفيديوهات الأكثر مشاهدة">Popular Videos</h2>
+            <div class="videos-grid">
+                <div class="video-card">
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/vGPiGNFuVf4" 
+                        title="Popular Video 1" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/JH0I6N3w3MY" 
+                        title="Popular Video 2" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/sA18xre4i6k" 
+                        title="Popular Video 3" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/vvgBETYwnKc" 
+                        title="Popular Video 4" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/sA18xre4i6k" 
+                        title="Popular Video 5" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-card">
+                    <iframe width="560" height="315" 
+                        src="https://www.youtube.com/embed/enYfhsy_3Ak" 
+                        title="Popular Video 6" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2 data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</h2>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <input type="text" placeholder="Your Name" data-en-placeholder="Your Name" data-ar-placeholder="اسمك" required>
+                    <input type="email" placeholder="Your Email" data-en-placeholder="Your Email" data-ar-placeholder="بريدك الإلكتروني" required>
+                    <textarea placeholder="Your Message" data-en-placeholder="Your Message" data-ar-placeholder="رسالتك" required></textarea>
+                    <button type="submit" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="social" class="social-media">
+            <h2 data-en="Follow Us" data-ar="تابعنا">Follow Us</h2>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@Quadri_Wheels" class="social-link">
+                    <i class="fab fa-youtube"></i>
+                    <span data-en="YouTube" data-ar="يوتيوب">YouTube</span>
+                </a>
+                <a href="https://www.instagram.com/srt_alpine_a110_r/" class="social-link">
+                    <i class="fab fa-instagram"></i>
+                    <span data-en="Instagram" data-ar="انستغرام">Instagram</span>
+                </a>
+                <a href="https://mostaql.com/u/abdallahhakee/portfolio" class="social-link">
+                    <i class="fas fa-briefcase"></i>
+                    <span data-en="Mostaql" data-ar="مستقل">Mostaql</span>
+                </a>
+                <a href="https://www.linkedin.com/in/عبدالله-عبدالحكيم-63b2b0289/" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span data-en="LinkedIn" data-ar="لينكد إن">LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Quadri Wheels. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة">All rights reserved.</span></p>
+        <p class="developer-credit">
+            <span data-en="Thanks to the developer" data-ar="شكرا للمطور">Thanks to the developer</span>
+            <a href="https://www.youtube.com/@kkpro1" target="_blank" class="developer-link">
+                <i class="fab fa-youtube"></i>
+            </a>
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
