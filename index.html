@@ -3,157 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quadri Wheels - Your Robotics Channel</title>
+    <title>Quadri Wheels - Automotive Excellence</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">Quadri Wheels</div>
-            <ul class="nav-links">
-                <li><a href="#home" data-en="Home" data-ar="الرئيسية">Home</a></li>
-                <li><a href="#latest" data-en="Latest Video" data-ar="أحدث فيديو">Latest Video</a></li>
-                <li><a href="car-news.html" data-en="Car News" data-ar="أخبار السيارات">Car News</a></li>
-                <li><a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a></li>
-                <li><a href="#social" data-en="Social Media" data-ar="وسائل التواصل">Social Media</a></li>
-            </ul>
-            <div class="nav-buttons">
-                <button id="darkModeToggle" class="dark-mode-toggle">
-                    <i class="fas fa-moon"></i>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-logo-container">
+                <div class="loading-logo">
+                    <img src="images/channels4_banner.jpg" alt="Quadri Wheels" class="pulse">
+                </div>
+                <div class="loading-progress">
+                    <div class="progress-bar"></div>
+                </div>
+            </div>
+            <div class="loading-animation">
+                <div class="road">
+                    <div class="line"></div>
+                </div>
+                <div class="loading-car">
+                    <i class="fas fa-car-side"></i>
+                </div>
+            </div>
+            <div class="loading-text">
+                <span class="loading-message" data-en="Starting Engines..." data-ar="جاري تشغيل المحركات...">Starting Engines...</span>
+                <span class="loading-percentage">0%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modern Floating Navigation -->
+    <nav class="floating-nav">
+        <div class="nav-content">
+            <div class="logo-container">
+                <img src="images/channels4_banner.jpg" alt="Quadri Wheels" class="nav-logo">
+                <span class="logo-text">Quadri Wheels</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">
+                    <i class="fas fa-home"></i>
+                    <span data-en="Home" data-ar="الرئيسية">Home</span>
+                </a>
+                <a href="#about" class="nav-link">
+                    <i class="fas fa-info-circle"></i>
+                    <span data-en="About" data-ar="عن القناة">About</span>
+                </a>
+                <a href="#contact" class="nav-link">
+                    <i class="fas fa-envelope"></i>
+                    <span data-en="Contact" data-ar="اتصل بنا">Contact</span>
+                </a>
+            </div>
+            <div class="nav-controls">
+                <button id="darkModeToggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon dark-icon"></i>
+                    <i class="fas fa-sun light-icon"></i>
                 </button>
-                <button id="langToggle" class="lang-toggle">
+                <button id="langToggle" class="lang-toggle" aria-label="Toggle language">
+                    <i class="fas fa-globe"></i>
                     <span class="lang-text" data-en="عربي" data-ar="English">عربي</span>
                 </button>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
-    <main>
-        <section id="home" class="hero">
-            <div class="hero-content">
-                <h1 data-en="Welcome to Quadri Wheels" data-ar="مرحباً بكم في كوادري ويلز">Welcome to Quadri Wheels</h1>
-                <p data-en="This is the official website of the channel, which is better and better than the old channel website (All rights reserved to Quadri Wales)" data-ar="دا موقع القناة الرسمي أحسن و أفضل من الموقع القديم للقناة (كل الحقوق تابعة لكوادري ويلز)">This is the official website of the channel, which is better and better than the old channel website (All rights reserved to Quadri Wales)</p>
-                <a href="https://www.youtube.com/@Quadri_Wheels" class="cta-button" data-en="Subscribe Now" data-ar="اشترك الآن">Subscribe Now</a>
+    <!-- Hero Section with 3D Animation -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" data-en="Experience Automotive Excellence" data-ar="اختبر التميز في عالم السيارات">
+                Experience Automotive Excellence
+            </h1>
+            <p class="hero-subtitle" data-en="Join us on an exciting journey through the world of cars" data-ar="انضم إلينا في رحلة مثيرة عبر عالم السيارات">
+                Join us on an exciting journey through the world of cars
+            </p>
+            <div class="hero-cta">
+                <a href="https://youtube.com/@Quadri_Wheels" class="subscribe-btn" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                    <span data-en="Subscribe Now" data-ar="اشترك الآن">Subscribe Now</span>
+                </a>
+                <div class="stats">
+                    <div class="stat">
+                        <i class="fas fa-video"></i>
+                        <span class="stat-number" id="videoCount">44</span>
+                        <span class="stat-label" data-en="Videos" data-ar="فيديو">Videos</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-users"></i>
+                        <span class="stat-number" id="subscriberCount">268</span>
+                        <span class="stat-label" data-en="Subscribers" data-ar="مشترك">Subscribers</span>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+        <div id="threeDContainer" class="hero-3d"></div>
+    </section>
 
-        <section id="latest" class="latest-video">
+    <!-- Latest Video Section -->
+    <section id="latest-video" class="video-section">
+        <div class="section-header">
             <h2 data-en="Latest Video" data-ar="أحدث فيديو">Latest Video</h2>
-            <div class="video-container">
-                <iframe width="560" height="315" 
-                    src="https://www.youtube.com/embed/f9uxVM_SDbM" 
-                    title="Latest Quadri Wheels Video" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen>
-                </iframe>
+            <div class="video-info">
+                <span class="upload-date" id="latestVideoDate"></span>
+                <span class="view-count" id="latestVideoViews"></span>
             </div>
-        </section>
+        </div>
+        <div class="featured-video">
+            <div class="video-container" id="latestVideoContainer">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    src="https://www.youtube.com/embed/f9uxVM_SDbM"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                ></iframe>
+            </div>
+            <div class="video-details">
+                <h3 id="latestVideoTitle"></h3>
+                <p id="latestVideoDescription"></p>
+            </div>
+        </div>
+    </section>
 
-        <section id="popular" class="popular-videos">
-            <h2 data-en="Popular Videos" data-ar="الفيديوهات الأكثر مشاهدة">Popular Videos</h2>
-            <div class="videos-grid">
-                <div class="video-card">
-                    <iframe width="560" height="315" 
-                        src="https://www.youtube.com/embed/vGPiGNFuVf4" 
-                        title="Popular Video 1" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-content">
+            <h2 data-en="About Quadri Wheels" data-ar="عن كوادري ويلز">About Quadri Wheels</h2>
+            <p data-en="Your premier destination for automotive content, featuring in-depth reviews, test drives, and the latest news from the world of cars." 
+               data-ar="وجهتك المميزة لمحتوى السيارات، يتضمن مراجعات متعمقة، تجارب قيادة، وأحدث الأخبار من عالم السيارات.">
+                Your premier destination for automotive content, featuring in-depth reviews, test drives, and the latest news from the world of cars.
+            </p>
+            <div class="features">
+                <div class="feature">
+                    <i class="fas fa-car"></i>
+                    <h3 data-en="Car Reviews" data-ar="مراجعات السيارات">Car Reviews</h3>
                 </div>
-                <div class="video-card">
-                    <iframe width="560" height="315" 
-                        src="https://www.youtube.com/embed/JH0I6N3w3MY" 
-                        title="Popular Video 2" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                <div class="feature">
+                    <i class="fas fa-road"></i>
+                    <h3 data-en="Test Drives" data-ar="تجارب القيادة">Test Drives</h3>
                 </div>
-                <div class="video-card">
-                    <iframe width="560" height="315" 
-                        src="https://www.youtube.com/embed/sA18xre4i6k" 
-                        title="Popular Video 3" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-card">
-                    <iframe width="560" height="315" 
-                        src="https://www.youtube.com/embed/vvgBETYwnKc" 
-                        title="Popular Video 4" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-card">
-                    <iframe width="560" height="315" 
-                        src="https://www.youtube.com/embed/sA18xre4i6k" 
-                        title="Popular Video 5" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <div class="video-card">
-                    <iframe width="560" height="315" 
-                        src="https://www.youtube.com/embed/enYfhsy_3Ak" 
-                        title="Popular Video 6" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
+                <div class="feature">
+                    <i class="fas fa-newspaper"></i>
+                    <h3 data-en="Auto News" data-ar="أخبار السيارات">Auto News</h3>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="contact" class="contact">
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-content">
             <h2 data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</h2>
-            <div class="contact-form">
-                <form id="contactForm">
-                    <input type="text" placeholder="Your Name" data-en-placeholder="Your Name" data-ar-placeholder="اسمك" required>
-                    <input type="email" placeholder="Your Email" data-en-placeholder="Your Email" data-ar-placeholder="بريدك الإلكتروني" required>
-                    <textarea placeholder="Your Message" data-en-placeholder="Your Message" data-ar-placeholder="رسالتك" required></textarea>
-                    <button type="submit" data-en="Send Message" data-ar="إرسال الرسالة">Send Message</button>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="social-links">
+                        <a href="https://youtube.com/@Quadri_Wheels" class="social-link youtube" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                            <span>YouTube</span>
+                        </a>
+                        <a href="https://instagram.com/srt_alpine_a110_r" class="social-link instagram" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                            <span>Instagram</span>
+                        </a>
+                        <a href="https://linkedin.com/in/عبدالله-عبدالحكيم-63b2b0289" class="social-link linkedin" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm" onsubmit="return handleSubmit(event)">
+                    <div class="form-group">
+                        <input type="text" id="name" required
+                            data-en-placeholder="Your Name" data-ar-placeholder="اسمك">
+                        <label data-en="Name" data-ar="الاسم">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required
+                            data-en-placeholder="Your Email" data-ar-placeholder="بريدك الإلكتروني">
+                        <label data-en="Email" data-ar="البريد الإلكتروني">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" required
+                            data-en-placeholder="Your Message" data-ar-placeholder="رسالتك"></textarea>
+                        <label data-en="Message" data-ar="الرسالة">Message</label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        <span data-en="Send Message" data-ar="إرسال الرسالة">Send Message</span>
+                    </button>
                 </form>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="social" class="social-media">
-            <h2 data-en="Follow Us" data-ar="تابعنا">Follow Us</h2>
-            <div class="social-links">
-                <a href="https://www.youtube.com/@Quadri_Wheels" class="social-link">
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-branding">
+                <img src="images/channels4_banner.jpg" alt="Quadri Wheels" class="footer-logo">
+                <p data-en="Automotive Excellence" data-ar="التميز في عالم السيارات">Automotive Excellence</p>
+            </div>
+            <div class="footer-links">
+                <h3 data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h3>
+                <a href="#home" data-en="Home" data-ar="الرئيسية">Home</a>
+                <a href="#about" data-en="About" data-ar="عن القناة">About</a>
+                <a href="#contact" data-en="Contact" data-ar="اتصل بنا">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h3 data-en="Follow Us" data-ar="تابعنا">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://youtube.com/@Quadri_Wheels" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://instagram.com/srt_alpine_a110_r" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://linkedin.com/in/عبدالله-عبدالحكيم-63b2b0289" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Quadri Wheels. All rights reserved.</p>
+            <div class="developer-credit">
+                <span data-en="Developed by" data-ar="تم التطوير بواسطة">Developed by</span>
+                <a href="https://www.youtube.com/@k-dev11" target="_blank" class="developer-link">
+                    K-Dev
                     <i class="fab fa-youtube"></i>
-                    <span data-en="YouTube" data-ar="يوتيوب">YouTube</span>
-                </a>
-                <a href="https://www.instagram.com/srt_alpine_a110_r/" class="social-link">
-                    <i class="fab fa-instagram"></i>
-                    <span data-en="Instagram" data-ar="انستغرام">Instagram</span>
-                </a>
-                <a href="https://mostaql.com/u/abdallahhakee/portfolio" class="social-link">
-                    <i class="fas fa-briefcase"></i>
-                    <span data-en="Mostaql" data-ar="مستقل">Mostaql</span>
-                </a>
-                <a href="https://www.linkedin.com/in/عبدالله-عبدالحكيم-63b2b0289/" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                    <span data-en="LinkedIn" data-ar="لينكد إن">LinkedIn</span>
                 </a>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Quadri Wheels. <span data-en="All rights reserved." data-ar="جميع الحقوق محفوظة">All rights reserved.</span></p>
-        <p class="developer-credit">
-            <span data-en="Thanks to the developer" data-ar="شكرا للمطور">Thanks to the developer</span>
-            <a href="https://www.youtube.com/@kkpro1" target="_blank" class="developer-link">
-                <i class="fab fa-youtube"></i>
-            </a>
-        </p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
